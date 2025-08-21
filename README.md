@@ -28,7 +28,7 @@
 ### Option #1
 - https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/quickstart-backup-restore-database?view=sql-server-ver17&tabs=ssms#restore-a-backup
 ```
-1. Launch SQL Server Management Studio (SSMS) and connect to your SQL Server instance.
+1. Launch SQL Server Management Studio (SSMS) and connect to your SQL Server instance. Ansicht > Objekt Explorer
 2. Right-click the Databases node in Object Explorer and select Restore Database....
 3. Select Device:, and then select the ellipses (...) to locate your backup file.
 4. Select Add and navigate to where your .bak file is located. Select the .bak file and then select OK.
@@ -51,7 +51,7 @@
 #### Option #1
 - https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/quickstart-backup-restore-database?view=sql-server-ver17&tabs=ssms#take-a-backup
 ```
-1. Launch SQL Server Management Studio (SSMS) and connect to your SQL Server instance.
+1. Launch SQL Server Management Studio (SSMS) and connect to your SQL Server instance. Ansicht > Objekt Explorer
 2. Expand the Databases node in Object Explorer.
 3. Right-click the database, hover over Tasks, and select Back up....
 4. Under Destination, confirm that the path for your backup is correct. If you need to change the path, select Remove to remove the existing path, and then Add to type in a new path. You can use the ellipses to navigate to a specific file.
