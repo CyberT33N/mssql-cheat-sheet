@@ -20,9 +20,17 @@
 <br><br>
 
 
-# Backup
+# Dump
 
-## Microsoft Studio
+## import
+
+
+<br><br>
+
+
+## Export
+
+### Microsoft Studio
 Connect > Right Click Connection > New Query
 ```
 BACKUP DATABASE [Z1]
