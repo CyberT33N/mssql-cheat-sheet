@@ -11,7 +11,40 @@
 
 
 
+
+
 <br><br>
+
+---
+
+<br><br>
+
+
+# Backup
+
+## Microsoft Studio
+Connect > Right Click Connection > New Query
+```
+BACKUP DATABASE [Z1]
+TO DISK = N'C:\SQLBackups\Z1_FULL_20250821.bak'
+WITH INIT, CHECKSUM, STATS = 5;
+```
+- In my case Z1 is my database
+
+Then press execute
+
+
+
+
+
+
+
+
+
+<br><br>
+
+---
+
 <br><br>
 
 ## Docker
