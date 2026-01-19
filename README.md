@@ -13,6 +13,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 <br><br>
 
 ---
@@ -40,9 +49,14 @@
 
 
 
+
+
 ### Scripts
 
 #### Powershell
+
+
+<details><summary>Click to expand..</summary>
 
 
 This folder contains a PowerShell script to import the Z1 SQL dumps located at `data/dumps/pvs/z1` into a local MSSQL instance (Docker).
@@ -1153,6 +1167,14 @@ end {
 }
 
 ```
+
+
+</details>
+
+
+
+
+
 
 
 
