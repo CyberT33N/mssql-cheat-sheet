@@ -1788,45 +1788,19 @@ end {
 
 <details><summary>Click to expand..</summary>
 
-## SSMS: Z1 Datenbank als einzelne `.sql` Dateien exportieren (GUI)
+### SSMS: Datenbank als einzelne SQL-Dateien exportieren (Schema **und** Daten)
 
-### Variante A (empfohlen): **Schema + Daten als Script** (ein großes Script)
-1. **SSMS öffnen** → mit deiner Instanz verbinden.  
-2. Im **Object Explorer**: **Databases** → Rechtsklick auf **Z1** → **Tasks** → **Generate Scripts…**  
-3. **Next** → **Choose Objects**:
-   - **Script entire database and all database objects** (oder selektiv Tabellen auswählen)
-4. **Set Scripting Options**:
-   - **Save to file** (Single file oder Folder)
-5. Klick **Advanced…**:
-   - **Types of data to script** = **Schema and data**
-   - (optional) **Script Indexes** = **True**
-   - (optional) **Script Triggers** = **True**
-6. **Next** → **Finish**.
+- **SSMS öffnen** → Verbindung zur Instanz → **Datenbank `Z1`** auswählen
+- Rechtsklick auf **`Z1`** → **Tasks** → **Generate Scripts…**
+- **Choose Objects**: “Select specific database objects” → **Tables** auswählen (oder “Script entire database”)
+- **Set Scripting Options**: als Output **File** wählen (ggf. “one file per object”)
+- Jetzt kommt die entscheidende Stelle:
+  - Klicke auf **Advanced / Erweitert…**
+  - Suche die Option **„Datentypen, für die ein Skript erstellt wird.“**
+  - Wenn du **beides** willst (Tabellen/Schema **und** Daten/VALUES), dann **MUSST** du hier **„Schema und Daten“** auswählen
+    - Alternativ: **„Nur Daten“** (nur INSERT/VALUES) oder **„Nur Schema“** (nur CREATE/INDEX)
+- **OK** → **Next** → **Finish**
 
-> Ergebnis: i.d.R. **ein** (oder wenige) `.sql` Dateien, je nach Option.
-
----
-
-### Variante B: **Eine `.sql` pro Tabelle** (praktisch wie “viele einzelne Dateien”)
-1. **Databases** → Rechtsklick **Z1** → **Tasks** → **Generate Scripts…**  
-2. **Choose Objects**:
-   - **Select specific database objects**  
-   - **Tables** aufklappen → Tabellen auswählen (oder alle markieren)
-3. **Set Scripting Options**:
-   - **Save to file**
-   - **File name** setzen
-4. Klick **Advanced…**:
-   - **Types of data to script** = **Schema and data**
-5. **Next** bis **Finish**.
-
-> Hinweis: SSMS erzeugt hier typischerweise **mehrere Dateien** (je Objekt) **wenn** du “to file” entsprechend konfigurierst. Falls SSMS trotzdem alles in eine Datei schreibt: in den “Set Scripting Options” darauf achten, dass nicht “Single file” erzwungen wird (je nach SSMS-Version/Flow).
-
----
-
-### Variante C (nur Daten): **Export Data** (kein SQL-Script)
-Wenn du nur Daten raus willst (z.B. CSV):
-- Rechtsklick **Z1** → **Tasks** → **Export Data…**  
-Das erzeugt aber **keine `.sql` Insert-Skripte**, sondern Daten-Dateien.
 
 </details>
 
