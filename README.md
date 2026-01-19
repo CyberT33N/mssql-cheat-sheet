@@ -51,9 +51,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+
+
 ### Scripts
 
+
 #### Powershell
+
+
+#### Restore from sql files
 
 
 <details><summary>Click to expand..</summary>
