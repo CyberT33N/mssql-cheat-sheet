@@ -1775,6 +1775,72 @@ end {
 
 ### SSMS
 
+
+
+
+
+
+<br><br>
+<br><br>
+
+
+#### sql files
+
+<details><summary>Click to expand..</summary>
+
+## SSMS: Z1 Datenbank als einzelne `.sql` Dateien exportieren (GUI)
+
+### Variante A (empfohlen): **Schema + Daten als Script** (ein großes Script)
+1. **SSMS öffnen** → mit deiner Instanz verbinden.  
+2. Im **Object Explorer**: **Databases** → Rechtsklick auf **Z1** → **Tasks** → **Generate Scripts…**  
+3. **Next** → **Choose Objects**:
+   - **Script entire database and all database objects** (oder selektiv Tabellen auswählen)
+4. **Set Scripting Options**:
+   - **Save to file** (Single file oder Folder)
+5. Klick **Advanced…**:
+   - **Types of data to script** = **Schema and data**
+   - (optional) **Script Indexes** = **True**
+   - (optional) **Script Triggers** = **True**
+6. **Next** → **Finish**.
+
+> Ergebnis: i.d.R. **ein** (oder wenige) `.sql` Dateien, je nach Option.
+
+---
+
+### Variante B: **Eine `.sql` pro Tabelle** (praktisch wie “viele einzelne Dateien”)
+1. **Databases** → Rechtsklick **Z1** → **Tasks** → **Generate Scripts…**  
+2. **Choose Objects**:
+   - **Select specific database objects**  
+   - **Tables** aufklappen → Tabellen auswählen (oder alle markieren)
+3. **Set Scripting Options**:
+   - **Save to file**
+   - **File name** setzen
+4. Klick **Advanced…**:
+   - **Types of data to script** = **Schema and data**
+5. **Next** bis **Finish**.
+
+> Hinweis: SSMS erzeugt hier typischerweise **mehrere Dateien** (je Objekt) **wenn** du “to file” entsprechend konfigurierst. Falls SSMS trotzdem alles in eine Datei schreibt: in den “Set Scripting Options” darauf achten, dass nicht “Single file” erzwungen wird (je nach SSMS-Version/Flow).
+
+---
+
+### Variante C (nur Daten): **Export Data** (kein SQL-Script)
+Wenn du nur Daten raus willst (z.B. CSV):
+- Rechtsklick **Z1** → **Tasks** → **Export Data…**  
+Das erzeugt aber **keine `.sql` Insert-Skripte**, sondern Daten-Dateien.
+
+</details>
+
+
+
+
+<br><br>
+<br><br>
+
+
+#### Bak file
+
+<details><summary>Click to expand..</summary>
+
 #### Option #1
 - https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/quickstart-backup-restore-database?view=sql-server-ver17&tabs=ssms#take-a-backup
 ```
@@ -1795,6 +1861,19 @@ WITH INIT, CHECKSUM, STATS = 5;
 - In my case Z1 is my database
 
 Then press execute
+
+
+
+</details>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1826,6 +1905,9 @@ Then press execute
 ### Docker-compose
 
 #### 2022
+
+<details><summary>Click to expand..</summary>
+
 
 ### `docker-compose.yml`
 
@@ -1937,3 +2019,5 @@ services:
       retries: 3
       start_period: 60s
 ```
+
+</details>
