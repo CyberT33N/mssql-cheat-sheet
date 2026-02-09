@@ -23,7 +23,8 @@ SqlPackage finden:
 Get-ChildItem -Path "C:\Program Files","C:\Program Files (x86)" -Recurse -ErrorAction SilentlyContinue -Filter SqlPackage.exe | Select-Object -ExpandProperty FullName
 ```
 
-
+Falls es nicht existiert installieren:
+- https://go.microsoft.com/fwlink/?linkid=2338524
 
 
 Beispiel:
