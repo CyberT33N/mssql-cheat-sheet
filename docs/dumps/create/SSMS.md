@@ -19,11 +19,13 @@
 
 - **SSMS öffnen** → Verbindung zur Instanz → **Datenbank `Z1`** auswählen
 - Rechtsklick auf **`Z1`** → **Tasks** → **Generate Scripts…**
+
 - **Choose Objects**: “Select specific database objects” → **Tables** auswählen (oder “Script entire database”)
-- **Set Scripting Options**: als Output **File** wählen (ggf. “one file per object”)
+
+- **Set Scripting Options**: als Output **File** wählen (“one script file per object”)
 - Jetzt kommt die entscheidende Stelle:
   - Klicke auf **Advanced / Erweitert…**
-  - Suche die Option **„Datentypen, für die ein Skript erstellt wird.“**
+  - Suche die Option **„Datentypen, für die ein Skript erstellt wird.“** | "Types of data to script"
   - Wenn du **beides** willst (Tabellen/Schema **und** Daten/VALUES), dann **MUSST** du hier **„Schema und Daten“** auswählen
     - Alternativ: **„Nur Daten“** (nur INSERT/VALUES) oder **„Nur Schema“** (nur CREATE/INDEX)
 - **OK** → **Next** → **Finish**
